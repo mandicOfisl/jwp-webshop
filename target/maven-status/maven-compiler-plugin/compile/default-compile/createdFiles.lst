@@ -1,1 +1,16 @@
+hr\algebra\lmandic\webshop\servlet\HomeServlet.class
+hr\algebra\lmandic\webshop\model\PaymentType.class
 hr\algebra\lmandic\webshop\servlet\LoginServlet.class
+hr\algebra\lmandic\webshop\model\UserLogin.class
+hr\algebra\lmandic\webshop\filter\AuthorizationFilter.class
+hr\algebra\lmandic\webshop\model\Category.class
+hr\algebra\lmandic\webshop\model\User.class
+hr\algebra\lmandic\webshop\servlet\ProductServlet.class
+hr\algebra\lmandic\webshop\factory\RepoFactory.class
+hr\algebra\lmandic\webshop\repository\CategoryRepo.class
+hr\algebra\lmandic\webshop\repository\PropertiesRepo.class
+hr\algebra\lmandic\webshop\model\Product.class
+hr\algebra\lmandic\webshop\repository\ProductRepo.class
+hr\algebra\lmandic\webshop\model\Purchase.class
+hr\algebra\lmandic\webshop\model\ProductPurchase.class
+hr\algebra\lmandic\webshop\model\Role.class

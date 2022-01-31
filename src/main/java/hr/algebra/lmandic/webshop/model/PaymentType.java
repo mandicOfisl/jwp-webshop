@@ -3,12 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package hr.algebra.lmandic.webshop.model;
 
+import java.io.Serializable;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import lombok.Data;
 
 /**
  *
@@ -16,12 +23,15 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "PaymentType")
-public class PaymentType {
+public @Data class PaymentType implements Serializable{
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idPaymentType", unique = true)
-    private int idPaymentType;
+    private int id;
     
     @Column(name = "name", unique = true, nullable = false)
     private String name;
+   
+    
 }
