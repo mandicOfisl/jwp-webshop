@@ -62,4 +62,20 @@ private final EntityManagerFactory emf = RepoFactory.getEntityManagerFactory();
         return rows;
 
     }
+
+    public Category getCategoryById(int id) {
+        EntityManager em = emf.createEntityManager();
+        
+        Query query = em.createQuery("select c from Category c where c.id = :id");
+        query.setParameter("id", id);
+        
+        Category result = null;
+        
+        try {
+            result = (Category) query.getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } 
+        return result;
+    }
 }

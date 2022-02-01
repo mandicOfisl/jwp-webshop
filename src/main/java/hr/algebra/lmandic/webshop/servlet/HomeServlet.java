@@ -38,18 +38,16 @@ public class HomeServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-             /*
-            CategoryRepo categoryRepo = new CategoryRepo();
             
+            CategoryRepo categoryRepo = new CategoryRepo();            
             List<Category> cats = categoryRepo.getCategories();
-                  */      
-           
+             
             ProductRepo repo = new ProductRepo();
             List<Product> products = repo.getProducts();
             
             
             
-            //request.getSession().setAttribute("categories", cats);
+            request.getSession().setAttribute("categories", cats);
             request.getSession().setAttribute("products", products);
             
         } catch (Exception e) {

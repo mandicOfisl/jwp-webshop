@@ -29,6 +29,11 @@
         <name>navbar</name>
         <path>/WEB-INF/tags/navbar.tag</path>
     </tag-file>
+    
+    <tag-file>
+        <name>categoryFilter</name>
+        <path>/WEB-INF/tags/category_filter.tag</path>
+    </tag-file>
   
     <tag-file>
         <name>products</name>

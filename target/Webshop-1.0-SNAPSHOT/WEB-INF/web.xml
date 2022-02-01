@@ -20,10 +20,19 @@
         <servlet-class>hr.algebra.lmandic.webshop.servlet.HomeServlet</servlet-class>
     </servlet>
     
+    <servlet>
+        <servlet-name>ProductServlet</servlet-name>
+        <servlet-class>hr.algebra.lmandic.webshop.servlet.ProductServlet</servlet-class>
+    </servlet>
     
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>ProductServlet</servlet-name>
+        <url-pattern>/product</url-pattern>
     </servlet-mapping>
 
 

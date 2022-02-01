@@ -26,10 +26,10 @@
                 </p>
                 <input 
                     class="form-control" 
-                    name="quantity" 
-                    value="0" 
+                    name="quantity"
+                    value="1"
                     type="number" 
-                    min="0"
+                    min="1"
                     style="width: 25%">
             </div>
             

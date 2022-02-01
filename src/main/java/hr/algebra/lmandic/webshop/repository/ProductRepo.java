@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hr.algebra.lmandic.webshop.repository;
 
 import hr.algebra.lmandic.webshop.factory.RepoFactory;
+import hr.algebra.lmandic.webshop.model.Category;
 import java.util.List;
 import java.util.Properties;
 import javax.persistence.EntityManager;
@@ -37,15 +33,27 @@ public class ProductRepo {
         return result;
     }
     
+    public List<Product> getProductsByCategoryId(Category category) {
+        EntityManager em = emf.createEntityManager();
+        
+        Query query = em.createQuery("select p from Product p where p.category = :catId");
+        query.setParameter("catId", category);
+        
+        List<Product> result = null;
+        
+        try {
+            result = query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } 
+        return result;
+    }
+    
     
     public int insertProduct(Product newProduct){
         EntityManager em = emf.createEntityManager();
         TypedQuery<Product> tq = em.createQuery(sqlProps.getProperty("getProducts"), Product.class);
         List<Product> result = null;
-        
-        
-        
-        
         
         return 0;
     }
