@@ -1,13 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hr.algebra.lmandic.webshop.servlet;
 
+import hr.algebra.lmandic.webshop.model.ShoppingCart;
+import hr.algebra.lmandic.webshop.model.UserAccount;
+import hr.algebra.lmandic.webshop.repository.UserRepo;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,25 +22,38 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+                
         response.sendRedirect("login.jsp");
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        UserRepo userRepo = new UserRepo();
+        
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+                
+        UserAccount user = userRepo.getUserByName(username);
         
-        if ("luka".equals(username) && "pass".equals(password)) {
-            response.sendRedirect("home");
+        if (user != null) {
+            if (user.getPassword().equals(password)) {
+                
+                request.getSession().setAttribute("cart", new ShoppingCart());
+                
+                Cookie ck = new Cookie("username", username);
+                ck.setMaxAge(3600);
+                
+                response.addCookie(ck);
+                
+                
+                
+                
+                //log
+                response.sendRedirect("home");
+            }
+        } else {
+            response.sendError(403);
         }
     }
 

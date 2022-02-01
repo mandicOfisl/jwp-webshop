@@ -36,5 +36,5 @@ public @Data class Role implements Serializable{
     
     @OneToMany(mappedBy = "role", fetch = FetchType.EAGER)
     @EqualsAndHashCode.Exclude
-    private Set<User> users;
+    private Set<UserAccount> users;
 }

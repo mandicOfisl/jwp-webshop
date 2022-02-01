@@ -5,7 +5,7 @@
 
 <jsp:useBean id="products" scope="session" type="java.util.List"/>
 <jsp:useBean id="categories" scope="session" type="java.util.List"/>
-
+<jsp:useBean id="cart" scope="session" type="hr.algebra.lmandic.webshop.model.ShoppingCart"/>
 
 <!DOCTYPE html>
 <html>
@@ -24,6 +24,7 @@
         <div class="container">
             <div class="row">
                 <t:categoryFilter categories="${categories}" />
+                <t:cart cart="${cart}" />
             </div>
             
             <div class="row">
@@ -33,12 +34,18 @@
             </div>
             
             
-            
-            
-            
         </div>
         
         
         
     </body>
+    
+    <script type="text/javascript">
+        
+        
+        
+        
+        
+        
+    </script>
 </html>

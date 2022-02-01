@@ -25,9 +25,19 @@
         <servlet-class>hr.algebra.lmandic.webshop.servlet.ProductServlet</servlet-class>
     </servlet>
     
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>hr.algebra.lmandic.webshop.servlet.CartServlet</servlet-class>
+    </servlet>
+    
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
     </servlet-mapping>
     
     <servlet-mapping>

@@ -17,7 +17,6 @@ import hr.algebra.lmandic.webshop.model.Product;
 public class ProductRepo {
 
     private final EntityManagerFactory emf = RepoFactory.getEntityManagerFactory();
-    private final Properties sqlProps = PropertiesRepo.getSqlProperties();
 
     public List<Product> getProducts() {
         EntityManager em = emf.createEntityManager();
@@ -52,10 +51,26 @@ public class ProductRepo {
     
     public int insertProduct(Product newProduct){
         EntityManager em = emf.createEntityManager();
-        TypedQuery<Product> tq = em.createQuery(sqlProps.getProperty("getProducts"), Product.class);
+        //TypedQuery<Product> tq = em.createQuery(sqlProps.getProperty("getProducts"), Product.class);
         List<Product> result = null;
         
         return 0;
+    }
+
+    public Product getProductById(Integer id) {
+        EntityManager em = emf.createEntityManager();
+        
+        Query query = em.createQuery("select p from Product p where p.id = :id");
+        query.setParameter("id", id);
+        
+        Product result = null;
+        
+        try {
+            result = (Product) query.getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } 
+        return result;
     }
 
 }

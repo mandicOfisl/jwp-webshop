@@ -33,6 +33,24 @@ class ShoppingCart {
         
         totalAmount = calculateProperty(items, "price");
     }
+    
+    public void remove(Product product) {
+        items.remove(product);
+        
+        itemsNumber = (int) calculateProperty(items, "quantity");
+        
+        totalAmount = calculateProperty(items, "price");
+    }
+    
+    public void changeQuantity(Product product, Integer quantity) {
+        items.put(product, quantity);
+        
+        itemsNumber = (int) calculateProperty(items, "quantity");
+        
+        totalAmount = calculateProperty(items, "price");
+        
+        
+    }
 
     private double calculateProperty
         (HashMap<Product, Integer> items, String countedProperty) {

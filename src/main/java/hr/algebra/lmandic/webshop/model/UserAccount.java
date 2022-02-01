@@ -26,7 +26,7 @@ import lombok.EqualsAndHashCode;
  */
 @Entity
 @Table(name = "userAccount")
-public @Data class User implements Serializable{
+public @Data class UserAccount implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,11 +43,11 @@ public @Data class User implements Serializable{
     @JoinColumn(name = "roleId", nullable = false)
     private Role role;
     
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "userAccount", fetch = FetchType.EAGER)
     @EqualsAndHashCode.Exclude
     private Set<UserLogin> userLogins;
     
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "userAccount", fetch = FetchType.EAGER)
     @EqualsAndHashCode.Exclude
     private Set<Purchase> userPurchases;
     

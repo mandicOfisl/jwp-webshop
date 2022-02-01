@@ -34,6 +34,11 @@
         <name>categoryFilter</name>
         <path>/WEB-INF/tags/category_filter.tag</path>
     </tag-file>
+    
+    <tag-file>
+        <name>cart</name>
+        <path>/WEB-INF/tags/cart.tag</path>
+    </tag-file>
   
     <tag-file>
         <name>products</name>

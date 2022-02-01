@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import hr.algebra.lmandic.webshop.model.Category;
 import hr.algebra.lmandic.webshop.model.Product;
-import hr.algebra.lmandic.webshop.model.User;
+import hr.algebra.lmandic.webshop.model.UserAccount;
 
 /**
  *

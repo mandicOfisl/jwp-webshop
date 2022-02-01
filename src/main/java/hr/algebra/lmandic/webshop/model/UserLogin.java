@@ -42,5 +42,5 @@ public @Data class UserLogin implements Serializable{
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId", nullable = false)
-    private User user;
+    private UserAccount userAccount;
 }
