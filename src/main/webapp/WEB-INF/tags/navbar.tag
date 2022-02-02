@@ -10,7 +10,7 @@
 <%@attribute name="message"%>
 
 <%-- any content can be specified here e.g.: --%>
-<nav class="navbar navbar-expand-md navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" style="margin-bottom: 16px;">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Web Duchan</a>
         <button class="navbar-toggler" 

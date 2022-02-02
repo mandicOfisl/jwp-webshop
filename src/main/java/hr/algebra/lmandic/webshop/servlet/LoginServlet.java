@@ -47,10 +47,8 @@ public class LoginServlet extends HttpServlet {
                 
                 request.getSession().setAttribute("cart", new ShoppingCart());
                 
-                Cookie ck = new Cookie("username", username);
-                ck.setMaxAge(3600);
+                setCookies(user, response);
                 
-                response.addCookie(ck);
                 
                 //log
                 response.sendRedirect("home");
@@ -87,6 +85,18 @@ public class LoginServlet extends HttpServlet {
             addr = request.getRemoteAddr();
         }
         return addr;
+    }
+
+    private void setCookies(UserAccount user, HttpServletResponse response) {
+        Cookie ck = new Cookie("username", user.getUsername());
+        ck.setMaxAge(3600);
+
+        response.addCookie(ck);
+        
+        ck = new Cookie("role", user.getRole().getName());
+        ck.setMaxAge(3600);
+        
+        response.addCookie(ck);
     }
 
 }

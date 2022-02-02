@@ -15,15 +15,19 @@
     
     <body>
         
-        <t:navbar />
-        <t:time />
-        
+        <t:time />        
         
         <div class="container">
             <div class="row justify-content-center" style="margin-top: 30vh;">
-                <div class="col text-center" style="display: flex; flex-direction: column; align-items: center;">
+                <div 
+                    class="col text-center" 
+                    style="
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;"
+                        >
                     <h3>Login</h3>
-                    <form method="POST" action="http://localhost:8084/Webshop/login">
+                    <form method="POST" action="${contextPath}/login">
 
                         <input type="text" 
                                class="form-control my-3" 
@@ -39,7 +43,13 @@
                                placeholder="Password" 
                                style="width: 360px;"/>
 
-                        <button type="submit" class="btn btn-primary" style="margin-top: 10vh;">Login!</a>                    
+                        <button 
+                            type="submit" 
+                            class="btn btn-primary" 
+                            style="margin-top: 10vh;"
+                            >
+                            Login!
+                        </button>                    
                     </form>
                 </div>     
             </div>
