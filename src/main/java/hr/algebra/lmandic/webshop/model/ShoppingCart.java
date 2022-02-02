@@ -5,6 +5,7 @@
  */
 package hr.algebra.lmandic.webshop.model;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import lombok.Data;
@@ -17,10 +18,11 @@ public @Data
 class ShoppingCart {
 
     private HashMap<Product, Integer> items = new HashMap<>();
+    
 
     private int itemsNumber = 0;
 
-    private double totalAmount = 0;
+    private BigDecimal totalAmount = new BigDecimal(0);
 
     public void put(Product product, Integer quantity) {
 
@@ -29,7 +31,7 @@ class ShoppingCart {
 
         items.put(product, q);
         
-        itemsNumber = (int) calculateProperty(items, "quantity");
+        itemsNumber = calculateProperty(items, "quantity").intValue();
         
         totalAmount = calculateProperty(items, "price");
     }
@@ -37,7 +39,7 @@ class ShoppingCart {
     public void remove(Product product) {
         items.remove(product);
         
-        itemsNumber = (int) calculateProperty(items, "quantity");
+        itemsNumber = calculateProperty(items, "quantity").intValue();
         
         totalAmount = calculateProperty(items, "price");
     }
@@ -45,21 +47,21 @@ class ShoppingCart {
     public void changeQuantity(Product product, Integer quantity) {
         items.put(product, quantity);
         
-        itemsNumber = (int) calculateProperty(items, "quantity");
+        itemsNumber = calculateProperty(items, "quantity").intValue();
         
         totalAmount = calculateProperty(items, "price");
         
         
     }
 
-    private double calculateProperty
+    private BigDecimal calculateProperty
         (HashMap<Product, Integer> items, String countedProperty) {
-        double sum = 0;
+        BigDecimal sum = new BigDecimal(0);
         
         for (Map.Entry<Product, Integer> entry : items.entrySet()) {
-            sum += countedProperty.equals("price") ?
-                    entry.getKey().getPrice() * entry.getValue() :
-                        entry.getValue();
+            sum.add(countedProperty.equals("price") ?
+                    entry.getKey().getPrice().multiply(new BigDecimal(entry.getValue())) :
+                        new BigDecimal(entry.getValue()));
         }
         
         return sum;

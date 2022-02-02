@@ -28,6 +28,7 @@ public class CartServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.sendRedirect("cart.jsp");
     }
 
     
@@ -50,7 +51,7 @@ public class CartServlet extends HttpServlet {
         
         request.getSession().setAttribute("cart", cart);
         
-        response.sendRedirect(request.getRequestURL().toString());
+        response.sendRedirect("home");
         
     }
 

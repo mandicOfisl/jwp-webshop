@@ -3,53 +3,37 @@
 <%@taglib uri="/WEB-INF/tld/tagLib.tld" prefix="t" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
-<jsp:useBean id="products" scope="session" type="java.util.List"/>
-<jsp:useBean id="categories" scope="session" type="java.util.List"/>
 <jsp:useBean id="cart" scope="session" type="hr.algebra.lmandic.webshop.model.ShoppingCart"/>
 
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Home</title>
+        <title>Shopping cart</title>
         <link rel="stylesheet" href="./Resources/css/bootstrap.min.css" type="text/css"/>
         
         <script src="Resources/js/jquery-3.6.0.min.js" type="text/javascript"></script>
         <script src="Resources/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+        
     </head>
     <body>
-        
         <t:navbar />
         
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <t:categoryFilter categories="${categories}" />
+                    <t:cartItems cart="${cart}" />
                 </div>
-                <div class="col">
-                    <t:cart cart="${cart}" />
-                </div>
+                <div cl
             </div>
             
             <div class="row">
                 
-                <t:products products="${products}" />
+                
                 
             </div>
             
             
         </div>
-        
-        
-        
     </body>
-    
-    <script type="text/javascript">
-        
-        
-        
-        
-        
-        
-    </script>
 </html>

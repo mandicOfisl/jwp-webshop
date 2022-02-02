@@ -3,6 +3,7 @@ E:\Dev\jwp-webshop\src\main\java\hr\algebra\lmandic\webshop\model\ProductPurchas
 E:\Dev\jwp-webshop\src\main\java\hr\algebra\lmandic\webshop\servlet\HomeServlet.java
 E:\Dev\jwp-webshop\src\main\java\hr\algebra\lmandic\webshop\model\Purchase.java
 E:\Dev\jwp-webshop\src\main\java\hr\algebra\lmandic\webshop\repository\CategoryRepo.java
+E:\Dev\jwp-webshop\src\main\java\hr\algebra\lmandic\webshop\repository\UserLoginRepo.java
 E:\Dev\jwp-webshop\src\main\java\hr\algebra\lmandic\webshop\tag\TimeTagHandler.java
 E:\Dev\jwp-webshop\src\main\java\hr\algebra\lmandic\webshop\model\PaymentType.java
 E:\Dev\jwp-webshop\src\main\java\hr\algebra\lmandic\webshop\model\ShoppingCart.java

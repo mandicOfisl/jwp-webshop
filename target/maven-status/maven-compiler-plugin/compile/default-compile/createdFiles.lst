@@ -1,6 +1,7 @@
 hr\algebra\lmandic\webshop\servlet\HomeServlet.class
 hr\algebra\lmandic\webshop\model\PaymentType.class
 hr\algebra\lmandic\webshop\servlet\LoginServlet.class
+hr\algebra\lmandic\webshop\repository\UserLoginRepo.class
 hr\algebra\lmandic\webshop\servlet\CartServlet.class
 hr\algebra\lmandic\webshop\model\UserLogin.class
 hr\algebra\lmandic\webshop\filter\AuthorizationFilter.class

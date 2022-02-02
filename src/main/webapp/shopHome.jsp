@@ -23,8 +23,12 @@
         
         <div class="container">
             <div class="row">
-                <t:categoryFilter categories="${categories}" />
-                <t:cart cart="${cart}" />
+                <div class="col">
+                    <t:categoryFilter categories="${categories}" />
+                </div>
+                <div class="col">
+                    <t:cart cart="${cart}" />
+                </div>
             </div>
             
             <div class="row">

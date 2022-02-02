@@ -33,11 +33,34 @@
     <tag-file>
         <name>categoryFilter</name>
         <path>/WEB-INF/tags/category_filter.tag</path>
+        <attribute>
+            <name>categories</name>            
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.util.List</type>
+        </attribute>
     </tag-file>
     
     <tag-file>
         <name>cart</name>
         <path>/WEB-INF/tags/cart.tag</path>
+        <attribute>
+            <name>cart</name>            
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>hr.algebra.lmandic.webshop.model.ShoppingCart</type>
+        </attribute>
+    </tag-file>
+    
+    <tag-file>
+        <name>cartItems</name>
+        <path>/WEB-INF/tags/cart_items.tag</path>
+        <attribute>
+            <name>cart</name>            
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>hr.algebra.lmandic.webshop.model.ShoppingCart</type>
+        </attribute>
     </tag-file>
   
     <tag-file>

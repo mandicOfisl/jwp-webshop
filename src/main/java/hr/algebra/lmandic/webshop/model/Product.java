@@ -6,6 +6,7 @@
 package hr.algebra.lmandic.webshop.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,7 +38,7 @@ public @Data class Product implements Serializable {
     private String name;
         
     @Column(name = "price", nullable = false)
-    private double price;
+    private BigDecimal price;
         
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categoryId", nullable = false)
