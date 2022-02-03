@@ -1,8 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@tag description="put the tag description here" pageEncoding="UTF-8"%>
 
-<%@attribute name="message"%>
-
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <c:set var="adminRole" value="admin" />
 
@@ -29,7 +27,7 @@
                 </li>
                 <c:if test="${cookie['role'].getValue().length() > 0}">
                     <li class="nav-item">
-                        <a class="nav-link" href="${contextPath}/">Past purchases</a>
+                        <a class="nav-link" href="${contextPath}/home">Past purchases</a>
                     </li>
                 </c:if>
                 <c:if test="${cookie['role'].getValue().equals(adminRole)}">
