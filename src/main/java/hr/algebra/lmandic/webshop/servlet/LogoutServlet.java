@@ -26,7 +26,7 @@ public class LogoutServlet extends HttpServlet {
             response.addCookie(cookie);
         }        
         
-        request.getRequestDispatcher("home").forward(request, response);        
+        response.sendRedirect("home");
     }
 
     @Override
