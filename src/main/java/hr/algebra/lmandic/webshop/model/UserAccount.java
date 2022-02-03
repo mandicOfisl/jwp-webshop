@@ -47,7 +47,7 @@ public @Data class UserAccount implements Serializable{
     @EqualsAndHashCode.Exclude
     private Set<UserLogin> userLogins;
     
-    @OneToMany(mappedBy = "userAccount", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "userAcc", fetch = FetchType.EAGER)
     @EqualsAndHashCode.Exclude
     private Set<Purchase> userPurchases;
     

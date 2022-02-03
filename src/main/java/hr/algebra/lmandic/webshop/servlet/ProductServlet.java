@@ -25,22 +25,19 @@ import hr.algebra.lmandic.webshop.repository.CategoryRepo;
 @WebServlet(name = "ProductServlet", urlPatterns = {"/product"})
 public class ProductServlet extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+            
+        
         String categoryId = request.getParameter("cat");
+        
         
         ProductRepo productRepo = new ProductRepo();
         CategoryRepo categoryRepo = new CategoryRepo();
+        
+        
         
         Category cat = categoryRepo.getCategoryById(Integer.parseInt(categoryId));
         

@@ -20,7 +20,7 @@ public class UserLoginRepo {
 
     private final EntityManagerFactory emf = RepoFactory.getEntityManagerFactory();
 
-    public List<UserLogin> getProducts() {
+    public List<UserLogin> getUserLogins() {
         EntityManager em = emf.createEntityManager();
         Query query = em.createQuery("from UserLogin");
 
@@ -57,6 +57,22 @@ public class UserLoginRepo {
         }
 
         return res;
+    }
+    
+    
+    public List<UserLogin> getUserLoginsByUserId(int userId) {
+        EntityManager em = emf.createEntityManager();
+        Query query = em.createNativeQuery("select * from userlogins where userid = ?");
+        query.setParameter(1, userId);
+        
+        List<UserLogin> result = null;
+
+        try {
+            result = query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
 }

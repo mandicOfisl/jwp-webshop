@@ -17,8 +17,7 @@ import lombok.Data;
 public @Data
 class ShoppingCart {
 
-    private HashMap<Product, Integer> items = new HashMap<>();
-    
+    private HashMap<Product, Integer> items = new HashMap<>();    
 
     private int itemsNumber = 0;
 
@@ -59,9 +58,18 @@ class ShoppingCart {
         BigDecimal sum = new BigDecimal(0);
         
         for (Map.Entry<Product, Integer> entry : items.entrySet()) {
-            sum.add(countedProperty.equals("price") ?
-                    entry.getKey().getPrice().multiply(new BigDecimal(entry.getValue())) :
-                        new BigDecimal(entry.getValue()));
+            Product product = entry.getKey();
+            Integer quantity = entry.getValue();
+            
+            BigDecimal augend;
+            
+            if (countedProperty.equals("price")) {
+                augend = new BigDecimal(quantity).multiply(product.getPrice());
+            } else {
+                augend = new BigDecimal(quantity);
+            }
+                        
+            sum = sum.add(augend);
         }
         
         return sum;

@@ -7,6 +7,7 @@
 <jsp:useBean id="categories" scope="session" type="java.util.List"/>
 <jsp:useBean id="cart" scope="session" type="hr.algebra.lmandic.webshop.model.ShoppingCart"/>
 
+
 <!DOCTYPE html>
 <html>
     <head>

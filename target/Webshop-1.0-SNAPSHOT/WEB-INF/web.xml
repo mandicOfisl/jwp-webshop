@@ -10,6 +10,10 @@
         </session-timeout>
     </session-config>
     
+    
+    
+    
+    
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>hr.algebra.lmandic.webshop.servlet.LoginServlet</servlet-class>
@@ -30,6 +34,32 @@
         <servlet-class>hr.algebra.lmandic.webshop.servlet.CartServlet</servlet-class>
     </servlet>
     
+    <servlet>
+        <servlet-name>AuthorizePaymentServlet</servlet-name>
+        <servlet-class>hr.algebra.lmandic.webshop.servlet.AuthorizePaymentServlet</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <servlet-class>hr.algebra.lmandic.webshop.servlet.CheckoutServlet</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <servlet-class>hr.algebra.lmandic.webshop.servlet.UserLoginServlet</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>hr.algebra.lmandic.webshop.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>ProductManagmentServlet</servlet-name>
+        <servlet-class>hr.algebra.lmandic.webshop.servlet.ProductManagmentServlet</servlet-class>
+    </servlet>
+    
+    
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -45,10 +75,34 @@
         <url-pattern>/product</url-pattern>
     </servlet-mapping>
 
-
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>AuthorizePaymentServlet</servlet-name>
+        <url-pattern>/authorizePayment</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <url-pattern>/checkout</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <url-pattern>/userLogin</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>ProductManagmentServlet</servlet-name>
+        <url-pattern>/productManagment</url-pattern>
     </servlet-mapping>
     
             

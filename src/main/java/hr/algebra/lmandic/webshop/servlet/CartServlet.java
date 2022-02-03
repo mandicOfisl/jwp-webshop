@@ -11,7 +11,6 @@ import hr.algebra.lmandic.webshop.repository.ProductRepo;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,12 +21,23 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "CartServlet", urlPatterns = {"/cart"})
 public class CartServlet extends HttpServlet {
-
     
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException {        
+        String paramDelete = request.getParameter("d");
+        
+        if (paramDelete != null) {
+            ShoppingCart cart = (ShoppingCart) request.getSession().getAttribute("cart");        
+            Integer productId = Integer.parseInt(request.getParameter("productId"));
+            
+            ProductRepo productRepo = new ProductRepo();        
+            Product product = productRepo.getProductById(productId);
+            
+            cart.remove(product);
+        }
+        
         response.sendRedirect("cart.jsp");
     }
 
@@ -38,20 +48,27 @@ public class CartServlet extends HttpServlet {
                                         
         ShoppingCart cart = (ShoppingCart) request.getSession().getAttribute("cart");
         
-        if (cart == null) cart = new ShoppingCart();
+        if (cart == null) cart = new ShoppingCart();      
         
         Integer productId = Integer.parseInt(request.getParameter("productId"));
         Integer quantity = Integer.parseInt(request.getParameter("quantity"));
         
-        ProductRepo productRepo = new ProductRepo();
+        ProductRepo productRepo = new ProductRepo();        
+        Product product = productRepo.getProductById(productId);        
         
-        Product product = productRepo.getProductById(productId);
+        String paramUpdate = request.getParameter("u");       
+        String redirectUrl = "home";
         
-        cart.put(product, quantity);
+        if (paramUpdate != null) {
+            cart.changeQuantity(product, quantity);
+            redirectUrl = "cart";
+        } else { 
+            cart.put(product, quantity);   
+        }    
         
         request.getSession().setAttribute("cart", cart);
         
-        response.sendRedirect("home");
+        response.sendRedirect(redirectUrl);
         
     }
 

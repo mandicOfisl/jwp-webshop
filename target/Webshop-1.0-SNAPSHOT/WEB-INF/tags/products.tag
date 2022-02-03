@@ -9,34 +9,36 @@
 
 <c:forEach items="${products}" var="product">
     <div class="col-4" style="margin: 16px 0">
-        
-    
-    <form action="${contextPath}/cart" method="POST">
-        <div class="card card-body projectCard">
-            <input type="hidden" name="productId" value="${product.id}">
-            
-            <h1>${product.name}</h1>
-            
-            <p>${Hibernate.unproxy(product.getCategory()).getName()}</p>
-            <p><b>${product.price} kn</b></p>
-            
-            <div style="display: flex; margin: 4px 0; justify-content: space-around;">
-                <p>
-                Količina:     
-                </p>
-                <input 
-                    class="form-control" 
-                    name="quantity"
-                    value="1"
-                    type="number" 
-                    min="1"
-                    style="width: 25%">
+        <form action="${contextPath}/cart" method="POST">
+            <div class="card card-body projectCard">
+                <input type="hidden" name="productId" value="${product.id}">
+
+                <h2>${product.name}</h2>
+
+                <p>${Hibernate.unproxy(product.getCategory()).getName()}</p>
+                <p><b>${product.price} kn</b></p>
+
+                <div style="display: flex; margin: 4px 0; justify-content: space-around;">
+                    <p>
+                    Količina:     
+                    </p>
+                    <input 
+                        class="form-control" 
+                        name="quantity"
+                        value="1"
+                        type="number" 
+                        min="1"
+                        style="width: 25%">
+                </div>
+
+                <button 
+                    class="btn btn-primary" 
+                    type="submit"
+                    style="width: 50%;"
+                    >
+                    Add to Cart
+                </button>          
             </div>
-            
-            
-            
-            <button class="btn btn-primary" type="submit"><a>Add to Cart</a></button>          
-        </div>
-    </form>
-            </div>
+        </form>
+    </div>
 </c:forEach>

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hr.algebra.lmandic.webshop.model;
 
 import java.io.Serializable;
@@ -17,10 +12,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Data;
 
-/**
- *
- * @author C
- */
 @Entity
 @Table(name = "ProductPurchase")
 public @Data class ProductPurchase implements Serializable {
@@ -31,7 +22,7 @@ public @Data class ProductPurchase implements Serializable {
     private int id;
     
     @Column(name = "amount", nullable = false)
-    private double amount;    
+    private int amount;    
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "productId", nullable = false)

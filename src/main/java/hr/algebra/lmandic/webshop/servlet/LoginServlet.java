@@ -33,11 +33,11 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        UserRepo userRepo = new UserRepo();
-        
+               
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-                
+        /*
+        UserRepo userRepo = new UserRepo();        
         UserAccount user = userRepo.getUserByName(username);
         
         if (user != null) {
@@ -47,8 +47,8 @@ public class LoginServlet extends HttpServlet {
                 
                 request.getSession().setAttribute("cart", new ShoppingCart());
                 
-                setCookies(user, response);
-                
+                setCookies("user", user.getUsername(), response);
+                setCookies("role", user.getRole().getName(), response);
                 
                 //log
                 response.sendRedirect("home");
@@ -56,6 +56,16 @@ public class LoginServlet extends HttpServlet {
         } else {
             response.sendError(403);
         }
+        */
+        
+        if (username.equals("luka")) {
+            setCookies("role", "admin", response);
+        } else {
+            setCookies("role", "user", response);
+        }
+        setCookies("user", username, response);
+        
+        response.sendRedirect("home");
     }
 
     /**
@@ -87,16 +97,12 @@ public class LoginServlet extends HttpServlet {
         return addr;
     }
 
-    private void setCookies(UserAccount user, HttpServletResponse response) {
-        Cookie ck = new Cookie("username", user.getUsername());
+    private void setCookies(String name, String value, HttpServletResponse response) {
+        Cookie ck = new Cookie(name, value);
         ck.setMaxAge(3600);
 
         response.addCookie(ck);
         
-        ck = new Cookie("role", user.getRole().getName());
-        ck.setMaxAge(3600);
-        
-        response.addCookie(ck);
     }
 
 }

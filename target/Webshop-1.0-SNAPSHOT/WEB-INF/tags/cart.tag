@@ -7,7 +7,7 @@
 
 <div style="display: flex; justify-content: flex-end">
     <c:if test="${cart.itemsNumber > 0}">
-        <a class="btn btn-warning" href="${contextPath}/checkOut">Proceed to checkout</a>
+        <a class="btn btn-warning" href="${contextPath}/checkout">Proceed to checkout</a>
     </c:if>
 
     <div style="display: flex; align-items: center">

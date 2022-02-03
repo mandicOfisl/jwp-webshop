@@ -3,6 +3,7 @@ package hr.algebra.lmandic.webshop.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,10 +20,7 @@ import javax.persistence.TemporalType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-/**
- *
- * @author C
- */
+
 @Entity
 @Table(name = "Purchase")
 public @Data class Purchase implements Serializable {
@@ -41,10 +39,14 @@ public @Data class Purchase implements Serializable {
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId", nullable = false)
-    private UserAccount userAccount;
+    private UserAccount userAcc;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "paymentTypeId", nullable = false)
+    private PaymentType paymentType;
     
     @OneToMany(mappedBy = "purchase", fetch = FetchType.EAGER)
     @EqualsAndHashCode.Exclude
-    private Set<ProductPurchase> productPurchases; 
+    private Set<ProductPurchase> productPurchases = new HashSet<ProductPurchase>(); 
     
 }
