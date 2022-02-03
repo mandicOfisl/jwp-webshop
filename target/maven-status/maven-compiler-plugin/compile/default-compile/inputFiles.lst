@@ -3,7 +3,6 @@ E:\Dev\jwp-webshop\src\main\java\hr\algebra\lmandic\webshop\model\PaymentType.ja
 E:\Dev\jwp-webshop\src\main\java\hr\algebra\lmandic\webshop\repository\UserRepo.java
 E:\Dev\jwp-webshop\src\main\java\hr\algebra\lmandic\webshop\servlet\ProductServlet.java
 E:\Dev\jwp-webshop\src\main\java\hr\algebra\lmandic\webshop\model\UserLogin.java
-E:\Dev\jwp-webshop\src\main\java\hr\algebra\lmandic\webshop\filter\AuthorizationFilter.java
 E:\Dev\jwp-webshop\src\main\java\hr\algebra\lmandic\webshop\servlet\CartServlet.java
 E:\Dev\jwp-webshop\src\main\java\hr\algebra\lmandic\webshop\servlet\ProductManagmentServlet.java
 E:\Dev\jwp-webshop\src\main\java\hr\algebra\lmandic\webshop\servlet\CheckoutServlet.java

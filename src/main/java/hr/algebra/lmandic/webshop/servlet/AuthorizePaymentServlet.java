@@ -33,8 +33,6 @@ public class AuthorizePaymentServlet extends HttpServlet {
             throws ServletException, IOException {
         ShoppingCart cart = (ShoppingCart) request.getSession().getAttribute("cart");
         
-              
-        
         String paymentType = request.getParameter("paymentType");
         
         PaymentType pt = new PaymentType();

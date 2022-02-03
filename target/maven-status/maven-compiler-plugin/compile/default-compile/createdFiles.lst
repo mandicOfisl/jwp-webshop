@@ -18,7 +18,6 @@ hr\algebra\lmandic\webshop\model\PaymentType.class
 hr\algebra\lmandic\webshop\repository\UserLoginRepo.class
 hr\algebra\lmandic\webshop\servlet\CartServlet.class
 hr\algebra\lmandic\webshop\servlet\UserLoginServlet.class
-hr\algebra\lmandic\webshop\filter\AuthorizationFilter.class
 hr\algebra\lmandic\webshop\tag\TimeTagHandler.class
 hr\algebra\lmandic\webshop\model\Category.class
 hr\algebra\lmandic\webshop\servlet\LogoutServlet.class
